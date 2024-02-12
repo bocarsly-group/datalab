@@ -86,18 +86,8 @@ def get_equipment_summary():
 
     _project = {
         "_id": 0,
-        "creators": {
-            "display_name": 1,
-            "contact_email": 1,
-        },
-        # "collections": {
-        #     "collection_id": 1,
-        #     "title": 1,
-        # },
         "item_id": 1,
         "name": 1,
-        "nblocks": {"$size": "$display_order"},
-        "characteristic_chemical_formula": 1,
         "type": 1,
         "date": 1,
         "refcode": 1,
