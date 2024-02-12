@@ -79,7 +79,7 @@ def get_equipment_summary():
         return (
             jsonify(
                 status="error",
-                message="Authorization required to access chemical inventory.",
+                message="Authorization required to access equipment list.",
             ),
             401,
         )
