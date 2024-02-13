@@ -34,6 +34,18 @@
         @click="deleteThisBlock"
       />
     </div>
+    <div class="form-row">
+      <div class="form-group form-inline col-12">
+        <label for="equipment-select">Equipment:</label>
+        <ItemSelect
+          id="equipment-select"
+          class="pl-2 col-md-10 col-sm-10"
+          v-model="equipmentList"
+          multiple
+          :typesToQuery="['equipment']"
+        />
+      </div>
+    </div>
 
     <div
       ref="datablockContent"
@@ -50,7 +62,7 @@
 import { createComputedSetterForBlockField } from "@/field_utils.js";
 import TinyMceInline from "@/components/TinyMceInline";
 import tinymce from "tinymce/tinymce";
-
+import ItemSelect from "@/components/ItemSelect";
 import { deleteBlock, updateBlockFromServer } from "@/server_fetch_utils";
 
 export default {
@@ -59,6 +71,7 @@ export default {
       isExpanded: true,
       contentMaxHeight: "none",
       padding_height: 18,
+      equipmentList: [],
     };
   },
   computed: {
@@ -147,6 +160,7 @@ export default {
   },
   components: {
     TinyMceInline,
+    ItemSelect,
   },
 };
 </script>
