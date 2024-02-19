@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 62", "versioningit  ~=  1.0", "wheel"]
+requires = ["setuptools >= 62", "versioningit  ~=  3.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -36,6 +36,7 @@ namespaces = false
 [tool.versioningit.vcs]
 method = "git"
 default-tag = "0.0.1"
+
 
 [tool.mypy]
 plugins = "pydantic.mypy"
