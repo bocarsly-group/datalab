@@ -38,6 +38,7 @@ langchain = "*"
 langchain-openai = "*"
 langchain-anthropic = "*"
 transformers = "*"
+navani = { path = "../lib/navani" }
 
 [dev-packages]
 pytest = "*"
