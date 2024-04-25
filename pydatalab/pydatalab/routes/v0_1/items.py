@@ -610,7 +610,7 @@ def delete_sample():
 
 
     item_type = None
-    doc = flask_mongo.db.items.find_one({"item_id": item_id}, project={"type": 1}})
+    doc = flask_mongo.db.items.find_one({"item_id": item_id}, projection={"type": 1})
     if doc and doc.get("type"):
         item_type = doc
 
