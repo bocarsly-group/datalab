@@ -607,8 +607,14 @@ def create_samples():
 def delete_sample():
     request_json = request.get_json()  # noqa: F821 pylint: disable=undefined-variable
     item_id = request_json["item_id"]
-    
-    user_only = updated_data["type"] not in ("starting_materials", "equipment")
+
+
+    item_type = None
+    doc = flask_mongo.db.items.find_one({"item_id": item_id}, project={"type": 1}})
+    if doc and doc.get("type"):
+        item_type = doc
+
+    user_only = item_type not in ("starting_materials", "equipment")
 
     result = flask_mongo.db.items.delete_one(
         {"item_id": item_id, **get_default_permissions(user_only=user_only)}
